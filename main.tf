@@ -2,9 +2,9 @@ provider "aws" {
   region = var.region
 }
 resource "aws_instance" "web" {
-  ami             = "ami-00c39f71452c08778"
-  instance_type   = "t2.micro"
+  ami             = var.instance_ami
+  instance_type   = var.instance_type
   tags = {
-    Name = "custom-web"
+    Name = var.instance_name
   }
 }
